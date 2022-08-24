@@ -12,14 +12,14 @@ var button = document.querySelector(".button");
 button.addEventListener('click', function (evt) {
     evt.preventDefault();
     const content = {
-        s: masofa.value-0
+        s: masofa.value
     }
         // let a = (content.s/800).toFixed(1)
         // let c=(a-0).toFixed(0)
         // let x=(a*10%10);
         // let h=(x-0).toFixed(0)
         // console.log(x)
-    function tekshirish(masofa) {
+    function tekshirish(n) {
         if (typeof content.s !== 'number' && isNaN(content.s - 0))
             return false;
         return true;
@@ -27,11 +27,19 @@ button.addEventListener('click', function (evt) {
     }
 
     function hisob(b) {
+        if(tekshirish(content.s))
+        {
         let a = (content.s/b).toFixed(1)
         let c=(a-0).toFixed(0)
         let x=(a*10%10)*6;
         let h=(x-0).toFixed(0)
         return c+" soat "+h+" min";
+        }
+        else{
+        alert("son kirit")
+        throw new Error("son kirit");
+        
+}
 
     }
 
